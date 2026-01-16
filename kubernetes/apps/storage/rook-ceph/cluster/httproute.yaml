@@ -12,7 +12,7 @@ spec:
   rules:
     - backendRefs:
         - name: rook-ceph-mgr-dashboard
-          namespace: rook-ceph
+          namespace: storage
           port: 7000
       matches:
         - path:
