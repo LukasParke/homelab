@@ -33,7 +33,7 @@ spec:
               tag: v1.8.0
             env:
               TZ: America/Vancouver
-              HOMEPAGE_ALLOWED_HOSTS: "{{ .Release.Name }}.chestr.dev"
+              HOMEPAGE_ALLOWED_HOSTS: "{{ .Release.Name }}.parke.dev"
             # envFrom:
             #   - secretRef:
             #       name: homepage-secret
