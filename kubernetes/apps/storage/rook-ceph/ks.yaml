@@ -16,7 +16,7 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  targetNamespace: *namespace
+  targetNamespace: rook-ceph
   timeout: 5m
   wait: true
 ---
@@ -36,11 +36,11 @@ spec:
     - apiVersion: helm.toolkit.fluxcd.io/v2
       kind: HelmRelease
       name: rook-ceph-cluster
-      namespace: *namespace
+      namespace: rook-ceph
     - apiVersion: ceph.rook.io/v1
       kind: CephCluster
       name: rook-ceph
-      namespace: *namespace
+      namespace: rook-ceph
   healthCheckExprs:
     - apiVersion: ceph.rook.io/v1
       kind: CephCluster
@@ -54,6 +54,6 @@ spec:
     kind: GitRepository
     name: flux-system
     namespace: flux-system
-  targetNamespace: *namespace
+  targetNamespace: rook-ceph
   timeout: 15m
   wait: true
