@@ -34,9 +34,9 @@ spec:
             env:
               TZ: America/Vancouver
               HOMEPAGE_ALLOWED_HOSTS: "{{ .Release.Name }}.chestr.dev"
-            envFrom:
-              - secretRef:
-                  name: homepage-secret
+            # envFrom:
+            #   - secretRef:
+            #       name: homepage-secret
             resources:
               requests:
                 cpu: 15m
