@@ -113,9 +113,6 @@ spec:
             csi.storage.k8s.io/node-stage-secret-namespace: "{{ .Release.Namespace }}"
             csi.storage.k8s.io/fstype: ext4
     cephBlockPoolsVolumeSnapshotClass:
-      enabled: true
-      name: csi-ceph-blockpool
-      isDefault: true
-      deletionPolicy: Delete
+      enabled: false
     cephFileSystems: []
     cephObjectStores: []
