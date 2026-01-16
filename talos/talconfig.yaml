@@ -32,7 +32,8 @@ nodes:
         addresses:
           - "10.10.10.51/24"
         routes:
-          - gateway: "10.10.10.1"
+          - network: "0.0.0.0/0"
+            gateway: "10.10.10.1"
         mtu: 1500
         vip:
           ip: "10.10.10.54"
@@ -50,7 +51,8 @@ nodes:
         addresses:
           - "10.10.10.52/24"
         routes:
-          - gateway: "10.10.10.1"
+          - network: "0.0.0.0/0"
+            gateway: "10.10.10.1"
         mtu: 1500
         vip:
           ip: "10.10.10.54"
@@ -68,7 +70,8 @@ nodes:
         addresses:
           - "10.10.10.53/24"
         routes:
-          - gateway: "10.10.10.1"
+          - network: "0.0.0.0/0"
+            gateway: "10.10.10.1"
         mtu: 1500
         vip:
           ip: "10.10.10.54"
