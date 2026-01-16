@@ -124,19 +124,6 @@ data:
               accountid: {{HOMEPAGE_VAR_CLOUDFLARE_ACCOUNTID}}
               tunnelid: {{HOMEPAGE_VAR_CLOUDFLARE_TUNNELID}}
               key: {{HOMEPAGE_VAR_CLOUDFLARE_API_TOKEN}}
-        - PiKVM:
-            href: https://pikvm.chestr.dev
-            icon: pikvm.png
-    - System:
-        - Mainsail:
-            href: https://mainsail.chestr.dev
-            icon: mdi-printer-3d-nozzle
-            widget:
-              type: moonraker
-              url: https://mainsail.chestr.dev:7130
-        - Unifi:
-            href: https://udm.chestr.dev
-            icon: unifi.png
     - Calendar:
         - Calendar:
             widget:
