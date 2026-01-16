@@ -60,7 +60,7 @@ spec:
         hostnames: ["homepage.parke.dev"]
         parentRefs:
           - name: envoy-external
-            namespace: networking
+            namespace: network
             sectionName: https
         rules:
           - backendRefs:
