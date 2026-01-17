@@ -9,23 +9,11 @@
       cpu: true
       memory: true
       showLabel: true
-      label: "Olympus"
     nodes:
       show: true
       cpu: true
       memory: true
       showLabel: true
-
-# Local resources widget (container/host stats)
-- resources:
-    label: "System"
-    cpu: true
-    memory: true
-    cputemp: true
-    uptime: true
-    disk:
-      - /app
-    expanded: true
 
 # Search widget
 - search:
