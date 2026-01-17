@@ -131,6 +131,9 @@
         - icon: github.png
           description: Management Repo
           href: https://github.com/lukasparke/homelab
+        - icon: github.png
+          description: Renovate Dashboard
+          href: https://github.com/LukasParke/homelab/issues/5
     - Homepage Icons:
         - icon: si-jpeg
           href: https://github.com/homarr-labs/dashboard-icons/blob/main/ICONS.md
