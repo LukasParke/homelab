@@ -26,6 +26,7 @@
       cpu: true
       memory: true
       showLabel: true
+      label: "Cluster"
     nodes:
       show: true
       cpu: true
