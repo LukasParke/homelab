@@ -127,10 +127,10 @@
         - icon: kubernetes-dashboard.png
           description: Helm Chart Search
           href: https://nanne.dev/k8s-at-home-search/
-    - home-cluster:
+    - Repo:
         - icon: github.png
-          description: Renovate Dashboard
-          href: https://github.com/mchestr/home-cluster/issues/2976
+          description: Management Repo
+          href: https://github.com/lukasparke/homelab
     - Homepage Icons:
         - icon: si-jpeg
           href: https://github.com/homarr-labs/dashboard-icons/blob/main/ICONS.md
