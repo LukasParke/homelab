@@ -2,6 +2,23 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/widgets/
 
+# Date/time widget
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: long
+      timeStyle: short
+      hour12: true
+
+# OpenMeteo weather widget (no API key required)
+- openmeteo:
+    label: "Weather"
+    latitude: 41.8781
+    longitude: -87.6298
+    timezone: America/Chicago
+    units: imperial
+    cache: 5
+
 # Kubernetes cluster overview widget
 - kubernetes:
     cluster:
@@ -21,20 +38,3 @@
     target: _blank
     focus: true
     showSearchSuggestions: true
-
-# Date/time widget
-- datetime:
-    text_size: xl
-    format:
-      dateStyle: long
-      timeStyle: short
-      hour12: true
-
-# OpenMeteo weather widget (no API key required)
-- openmeteo:
-    label: "Weather"
-    latitude: 41.8781
-    longitude: -87.6298
-    timezone: America/Chicago
-    units: imperial
-    cache: 5
