@@ -8,5 +8,6 @@ components:
 
 resources:
   - ./namespace.yaml
+  - ./blog/ks.yaml
   - ./echo/ks.yaml
   - ./homepage/ks.yaml
