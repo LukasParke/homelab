@@ -16,7 +16,7 @@ spec:
           app:
             image:
               repository: ghcr.io/lukasparke/parke.dev
-              tag: sha256-23a627ea3ea30cc03e9286b64f0644917627fe0453c1cb5bf0761b98a4288d82
+              tag: latest
             probes:
               liveness: &probes
                 enabled: true
