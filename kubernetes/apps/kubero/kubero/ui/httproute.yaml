@@ -11,8 +11,8 @@ spec:
       sectionName: https
   rules:
     - backendRefs:
-        - name: kubero-ui
-          port: 80
+        - name: kubero
+          port: 2000
       matches:
         - path:
             type: PathPrefix
