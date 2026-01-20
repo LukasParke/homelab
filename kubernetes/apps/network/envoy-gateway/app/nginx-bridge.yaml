@@ -1,0 +1,41 @@
+---
+# ReferenceGrant allows the HTTPRoute in network namespace to reference
+# the nginx-ingress service in ingress-nginx namespace
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: ReferenceGrant
+metadata:
+  name: nginx-ingress-bridge
+  namespace: ingress-nginx
+spec:
+  from:
+    - group: gateway.networking.k8s.io
+      kind: HTTPRoute
+      namespace: network
+  to:
+    - group: ""
+      kind: Service
+      name: ingress-nginx-controller
+---
+# Bridge HTTPRoute to forward Kubero app traffic to nginx-ingress
+# This allows Kubero apps (which create Ingress resources) to be accessible
+# through the Cloudflare tunnel via envoy-external gateway
+#
+# Kubero apps should use hostnames like: myapp.apps.parke.dev
+# Configure this in Kubero pipeline settings
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: nginx-ingress-bridge
+spec:
+  hostnames:
+    # Wildcard for all Kubero apps - apps should use *.apps.parke.dev pattern
+    - "*.apps.parke.dev"
+  parentRefs:
+    - name: envoy-external
+      namespace: network
+      sectionName: https
+  rules:
+    - backendRefs:
+        - name: ingress-nginx-controller
+          namespace: ingress-nginx
+          port: 443
