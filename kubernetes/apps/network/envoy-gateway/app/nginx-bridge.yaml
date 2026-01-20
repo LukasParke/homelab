@@ -11,8 +11,10 @@ metadata:
   name: nginx-ingress-bridge
 spec:
   hostnames:
-    # Wildcard for all Kubero apps - apps should use *.apps.parke.dev pattern
+    # Wildcard for Kubero apps using apps subdomain pattern
     - "*.apps.parke.dev"
+    # Also handle test.parke.dev for existing Kubero apps
+    - "test.parke.dev"
   parentRefs:
     - name: envoy-external
       namespace: network
