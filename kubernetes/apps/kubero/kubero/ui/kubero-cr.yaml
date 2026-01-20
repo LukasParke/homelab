@@ -4,9 +4,6 @@ kind: Kubero
 metadata:
   name: kubero
 spec:
-  image:
-    repository: ghcr.io/kubero-dev/kubero
-    tag: v2.4.1
   ingress:
     enabled: false
   secrets: kubero-secrets
