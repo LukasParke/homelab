@@ -7,9 +7,10 @@ spec:
   image:
     repository: ghcr.io/kubero-dev/kubero
     tag: v2.3.0
-  persistence:
-    storageClass: ceph-block
-    size: 1Gi
+  kubero:
+    database:
+      storageClassName: ceph-block
+      size: 1Gi
   ingress:
     enabled: false
   secrets: kubero-secrets
