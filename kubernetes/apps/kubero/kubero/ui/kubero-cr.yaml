@@ -1,0 +1,85 @@
+---
+apiVersion: application.kubero.dev/v1alpha1
+kind: Kubero
+metadata:
+  name: kubero
+spec:
+  image:
+    repository: ghcr.io/kubero-dev/kubero
+    tag: v2.4.1
+  ingress:
+    enabled: false
+  secrets: kubero-secrets
+  env:
+    - name: KUBERO_CONTEXT
+      value: inCluster
+    - name: KUBERO_NAMESPACE
+      value: kubero
+  podSizeList:
+    - name: small
+      description: "Small (0.25 CPU, 512Mi Memory)"
+      resources:
+        requests:
+          memory: 512Mi
+          cpu: 250m
+        limits:
+          memory: 512Mi
+          cpu: 500m
+    - name: medium
+      description: "Medium (0.5 CPU, 1Gi Memory)"
+      resources:
+        requests:
+          memory: 1Gi
+          cpu: 500m
+        limits:
+          memory: 1Gi
+          cpu: 1000m
+    - name: large
+      description: "Large (1 CPU, 2Gi Memory)"
+      resources:
+        requests:
+          memory: 2Gi
+          cpu: 1000m
+        limits:
+          memory: 2Gi
+          cpu: 2000m
+  buildpacks:
+    - name: NodeJS
+      language: JavaScript
+      fetch:
+        repository: node
+        tag: 20-alpine
+      build:
+        repository: node
+        tag: 20-alpine
+        command: npm install
+      run:
+        repository: node
+        tag: 20-alpine
+        command: npm start
+    - name: Python
+      language: Python
+      fetch:
+        repository: python
+        tag: 3.12-alpine
+      build:
+        repository: python
+        tag: 3.12-alpine
+        command: pip install -r requirements.txt
+      run:
+        repository: python
+        tag: 3.12-alpine
+        command: python app.py
+    - name: Go
+      language: Go
+      fetch:
+        repository: golang
+        tag: 1.22-alpine
+      build:
+        repository: golang
+        tag: 1.22-alpine
+        command: go build -o app
+      run:
+        repository: golang
+        tag: 1.22-alpine
+        command: ./app
