@@ -5,6 +5,5 @@ resources:
   - ./certificate.yaml
   - ./envoy.yaml
   - ./helmrelease.yaml
-  - ./nginx-bridge.yaml
   - ./ocirepository.yaml
   - ./podmonitor.yaml
